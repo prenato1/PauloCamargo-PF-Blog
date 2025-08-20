@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Enviar Nova Mensagem</h2>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.recipient.id_for_label }}" class="form-label">Destinatário</label>
+            {{ form.recipient }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.subject.id_for_label }}" class="form-label">Assunto</label>
+            {{ form.subject }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.body.id_for_label }}" class="form-label">Mensagem</label>
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}

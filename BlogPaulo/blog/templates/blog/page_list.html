@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Páginas do Blog</h1>
+<hr>
+{% if pages %}
+    <div class="row">
+        {% for page in pages %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    {% if page.image %}
+                        <img src="{{ page.image.url }}" class="card-img-top" alt="{{ page.title }}" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ page.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ page.subtitle }}</h6>
+                        <p class="card-text">Autor: {{ page.author.username }} | Publicado em: {{ page.created_at|date:"d/m/Y" }}</p>
+                        <a href="{% url 'page-detail' page.pk %}" class="btn btn-primary">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-warning" role="alert">
+      Ainda não há páginas. {% if user.is_authenticated %}<a href="{% url 'page-create' %}" class="alert-link">Crie a primeira!</a>{% endif %}
+    </div>
+{% endif %}
+{% endblock %}

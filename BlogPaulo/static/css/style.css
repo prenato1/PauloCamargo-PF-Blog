@@ -1,0 +1,16 @@
+body {
+    padding-top: 70px; /* para não ficar atrás do navbar */
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+a.nav-link {
+    margin-right: 10px;
+}

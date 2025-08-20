@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Bem-vindo ao Blog do Paulo Camargo!</h1>
+        <p class="col-md-8 fs-4">Este é o projeto final para o curso de Python com Django. Explore as páginas, crie seu perfil e interaja com o conteúdo.</p>
+        <a href="{% url 'page-list' %}" class="btn btn-primary btn-lg" type="button">Ver Páginas</a>
+    </div>
+</div>
+{% endblock %}
